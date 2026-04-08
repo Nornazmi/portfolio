@@ -31,7 +31,7 @@ import { RouterLink } from '@angular/router';
       <!-- CTAs -->
       <div class="flex flex-wrap gap-3" style="animation: fade-up 0.4s ease 0.3s both">
         <a routerLink="/projects"
-           class="px-6 py-3 rounded-xl bg-accent text-white font-medium text-sm
+           class="px-6 py-3 rounded-xl bg-accent text-black dark:text-white font-medium text-sm
                   hover:bg-indigo-500 active:scale-95 transition-all duration-150 shadow-lg
                   shadow-indigo-200 dark:shadow-indigo-900/30">
           View projects →
@@ -39,7 +39,8 @@ import { RouterLink } from '@angular/router';
         <a routerLink="/about"
            class="px-6 py-3 rounded-xl border border-zinc-200 dark:border-zinc-700
                   text-zinc-700 dark:text-zinc-300 font-medium text-sm
-                  hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-95 transition-all duration-150">
+                  hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-95 transition-all duration-150
+                  hover:text-zinc-900 dark:hover:text-zinc-100">
           About me
         </a>
       </div>

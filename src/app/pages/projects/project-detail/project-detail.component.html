@@ -82,17 +82,17 @@
     <!-- Links -->
     <div class="flex flex-wrap gap-3 mt-14 pt-8 border-t border-zinc-200 dark:border-zinc-800">
       <a *ngIf="p.liveUrl" [href]="p.liveUrl" target="_blank" rel="noopener"
-         class="px-6 py-3 rounded-xl bg-accent text-white font-medium text-sm
+         class="px-6 py-3 rounded-xl bg-accent text-black dark:text-white font-medium text-sm
                 hover:bg-indigo-500 active:scale-95 transition-all shadow-lg
                 shadow-indigo-200 dark:shadow-indigo-900/30 no-underline">
-        View live ↗
+        View live &#8599;
       </a>
       <a *ngIf="p.repoUrl" [href]="p.repoUrl" target="_blank" rel="noopener"
          class="px-6 py-3 rounded-xl border border-zinc-200 dark:border-zinc-700
                 text-zinc-700 dark:text-zinc-300 font-medium text-sm
                 hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-95
                 transition-all no-underline">
-        GitHub ↗
+        GitHub &#8599;
       </a>
     </div>
 

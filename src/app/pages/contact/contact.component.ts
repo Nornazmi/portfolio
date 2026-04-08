@@ -12,10 +12,10 @@ import { Component } from '@angular/core';
         Open to full-time roles, freelance projects, and interesting conversations.
       </p>
       <a href="mailto:you&#64;example.com"
-         class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-white
+         class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent text-black dark:text-white
                 font-medium text-sm hover:bg-indigo-500 active:scale-95 transition-all
                 shadow-lg shadow-indigo-200 dark:shadow-indigo-900/30 no-underline">
-        you&#64;example.com ↗
+        you&#64;example.com &#8599;
       </a>
     </section>
   `
