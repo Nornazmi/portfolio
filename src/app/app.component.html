@@ -1,0 +1,6 @@
+<div [class.dark]="isDarkMode()">
+  <app-navbar [isDark]="isDarkMode()" (toggleTheme)="toggleTheme()" />
+  <main class="main-content">
+    <router-outlet />
+  </main>
+</div>

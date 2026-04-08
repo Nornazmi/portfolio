@@ -1,0 +1,38 @@
+[
+  {
+    "id": "portfolio-site",
+    "title": "Portfolio Website",
+    "tagline": "A case-study driven portfolio built with Angular",
+    "tags": ["Angular", "TypeScript", "UI/UX"],
+    "thumbnail": "https://placehold.co/600x400/1a1a2e/e0e0ff?text=Portfolio",
+    "overview": "A modern, dark-mode portfolio showcasing projects as detailed case studies.",
+    "problem": "Most portfolios just list projects with screenshots. Hiring managers want to understand your thinking.",
+    "solution": "Designed a case-study format that walks through problem, solution, and outcomes for each project.",
+    "outcome": "Increased interview callbacks by focusing on storytelling over aesthetics.",
+    "tech": ["Angular 17", "TypeScript", "RxJS", "SCSS"],
+    "liveUrl": "https://example.com",
+    "repoUrl": "https://github.com/example",
+    "images": [
+      "https://placehold.co/800x500/1a1a2e/e0e0ff?text=Screen+1",
+      "https://placehold.co/800x500/16213e/e0e0ff?text=Screen+2"
+    ]
+  },
+  {
+    "id": "task-manager",
+    "title": "Task Manager App",
+    "tagline": "A full-stack productivity tool with real-time sync",
+    "tags": ["React", "Node.js", "MongoDB"],
+    "thumbnail": "https://placehold.co/600x400/0f3460/e0e0ff?text=Task+App",
+    "overview": "A drag-and-drop task management app with team collaboration features.",
+    "problem": "Existing tools were either too complex (Jira) or too simple (sticky notes) for small teams.",
+    "solution": "Built a middle-ground tool with kanban boards, priorities, and real-time updates via WebSockets.",
+    "outcome": "Used by a 6-person startup team daily. Reduced missed deadlines by 40%.",
+    "tech": ["React", "Node.js", "Socket.io", "MongoDB"],
+    "liveUrl": "https://example.com",
+    "repoUrl": "https://github.com/example",
+    "images": [
+      "https://placehold.co/800x500/0f3460/e0e0ff?text=Kanban+Board",
+      "https://placehold.co/800x500/533483/e0e0ff?text=Task+Detail"
+    ]
+  }
+]

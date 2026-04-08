@@ -1,0 +1,113 @@
+<div *ngIf="project() as p; else notFoundTpl">
+  <div class="max-w-3xl mx-auto px-6 py-16 animate-fade-up">
+
+    <!-- Back -->
+    <a routerLink="/projects"
+       class="inline-flex items-center gap-2 text-sm text-zinc-400
+              hover:text-accent transition-colors mb-10 no-underline group">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+           class="group-hover:-translate-x-1 transition-transform">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      All projects
+    </a>
+
+    <!-- Hero -->
+    <header class="mb-12">
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span *ngFor="let tag of p.tags"
+              class="px-3 py-1 rounded-full text-xs font-medium
+                     bg-indigo-50 dark:bg-indigo-950/60 text-accent">
+          {{ tag }}
+        </span>
+      </div>
+      <h1 class="font-display text-4xl sm:text-5xl font-bold leading-tight
+                 text-zinc-900 dark:text-white mb-4">
+        {{ p.title }}
+      </h1>
+      <p class="text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed">
+        {{ p.tagline }}
+      </p>
+    </header>
+
+    <!-- Divider -->
+    <hr class="border-zinc-200 dark:border-zinc-800 mb-12"/>
+
+    <!-- Case study sections -->
+    <div class="space-y-12">
+
+      <section *ngFor="let section of [
+        { label: 'Overview',    content: p.overview  },
+        { label: 'The Problem', content: p.problem   },
+        { label: 'The Solution',content: p.solution  },
+        { label: 'Outcome',     content: p.outcome   }
+      ]">
+        <h2 class="font-display text-xl font-bold text-zinc-900 dark:text-white mb-3">
+          {{ section.label }}
+        </h2>
+        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          {{ section.content }}
+        </p>
+      </section>
+
+      <!-- Tech stack -->
+      <section>
+        <h2 class="font-display text-xl font-bold text-zinc-900 dark:text-white mb-4">
+          Tech stack
+        </h2>
+        <div class="flex flex-wrap gap-2">
+          <span *ngFor="let tech of p.tech"
+                class="px-3 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700
+                       text-sm font-mono text-zinc-600 dark:text-zinc-300">
+            {{ tech }}
+          </span>
+        </div>
+      </section>
+
+      <!-- Screenshots -->
+      <section *ngIf="p.images?.length">
+        <h2 class="font-display text-xl font-bold text-zinc-900 dark:text-white mb-4">
+          Screenshots
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <img *ngFor="let img of p.images"
+               [src]="img" [alt]="p.title + ' screenshot'"
+               class="rounded-xl border border-zinc-200 dark:border-zinc-800 w-full object-cover"/>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Links -->
+    <div class="flex flex-wrap gap-3 mt-14 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+      <a *ngIf="p.liveUrl" [href]="p.liveUrl" target="_blank" rel="noopener"
+         class="px-6 py-3 rounded-xl bg-accent text-white font-medium text-sm
+                hover:bg-indigo-500 active:scale-95 transition-all shadow-lg
+                shadow-indigo-200 dark:shadow-indigo-900/30 no-underline">
+        View live ↗
+      </a>
+      <a *ngIf="p.repoUrl" [href]="p.repoUrl" target="_blank" rel="noopener"
+         class="px-6 py-3 rounded-xl border border-zinc-200 dark:border-zinc-700
+                text-zinc-700 dark:text-zinc-300 font-medium text-sm
+                hover:bg-zinc-50 dark:hover:bg-zinc-800 active:scale-95
+                transition-all no-underline">
+        GitHub ↗
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Not found -->
+<ng-template #notFoundTpl>
+  <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-6">
+    <h2 class="font-display text-3xl font-bold text-zinc-900 dark:text-white mb-3">
+      Project not found
+    </h2>
+    <a routerLink="/projects"
+       class="text-accent hover:underline text-sm transition-colors">
+      ← Back to all projects
+    </a>
+  </div>
+</ng-template>
