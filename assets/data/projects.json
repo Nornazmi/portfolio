@@ -1,0 +1,80 @@
+[
+  {
+    "id": "ba-support-platform",
+    "title": "AI-Powered BA Workflow Automation",
+    "tagline": "Automating Jira ticket creation and simplifying developer progress visibility",
+    "tags": ["AI Automation", "Jira Integration", "Workflow Optimization"],
+    "thumbnail": "https://placehold.co/600x400/1a1a2e/e0e0ff?text=BA+Automation",
+    "overview": "A lightweight automation solution designed to simplify Business Analyst workflows by leveraging AI to generate structured Jira tickets and provide clear, non-technical explanations of development progress.",
+    "problem": "Business Analysts had to manually create Jira tickets and often relied on developers to explain progress, causing delays, inconsistencies, and communication gaps.",
+    "solution": "Initially planned as a full web platform, the approach was optimized mid-development for faster delivery. Implemented an AI-driven workflow using Cursor IDE with custom rules to enforce structured output formats. Integrated MCP to connect with Jira and GitHub, allowing AI-generated responses to be aligned with real development data while ensuring no direct system modifications were made.",
+    "outcome": "Delivered a faster and more efficient solution that reduced manual effort in ticket creation and improved communication between technical and non-technical stakeholders.",
+    "impact": [
+      "Reduced manual Jira ticket creation effort",
+      "Standardized requirement and task documentation format",
+      "Improved visibility of development progress for Business Analysts",
+      "Eliminated frequent dependency on developers for explanations"
+    ],
+    "tech": ["Cursor IDE", "AI Chat", "Custom Rules", "MCP", "Jira API", "GitHub API", "Python"],
+    "liveUrl": "",
+    "repoUrl": "",
+    "images": [
+      "https://placehold.co/800x500/1a1a2e/e0e0ff?text=AI+Output",
+      "https://placehold.co/800x500/16213e/e0e0ff?text=Jira+Integration"
+    ]
+  },
+  {
+    "id": "edms-system",
+    "title": "Electronic Document Management System (EDMS)",
+    "tagline": "Enterprise document system with OCR, PDF editing, and secure access",
+    "tags": ["ASP.NET", "SQL Server", "Enterprise System"],
+    "thumbnail": "https://placehold.co/600x400/0f3460/e0e0ff?text=EDMS",
+    "overview": "A full-featured document management system built for enterprise users to securely store, manage, and process documents.",
+    "problem": "Organizations struggled with inefficient document handling, lack of centralized storage, and manual document processing workflows.",
+    "solution": "Led a team of 3 developers to design and build an EDMS with OCR processing, PDF editing capabilities, and LDAP-based authentication for secure access.",
+    "outcome": "Significantly improved document accessibility, reduced manual processing time, and enhanced security for enterprise document workflows.",
+    "tech": ["ASP.NET Web Forms", "C#", "SQL Server", "OCR Integration", "LDAP"],
+    "liveUrl": "",
+    "repoUrl": "",
+    "images": [
+      "https://placehold.co/800x500/0f3460/e0e0ff?text=Document+Dashboard",
+      "https://placehold.co/800x500/533483/e0e0ff?text=PDF+Editor"
+    ]
+  },
+  {
+    "id": "helpdesk-system",
+    "title": "Helpdesk Management System",
+    "tagline": "Centralized issue tracking system for internal support teams",
+    "tags": ["ASP.NET", "SQL Server", "Workflow System"],
+    "thumbnail": "https://placehold.co/600x400/533483/e0e0ff?text=Helpdesk",
+    "overview": "A web-based helpdesk system designed to manage internal support requests and streamline issue resolution processes.",
+    "problem": "Support requests were scattered and unmanaged, causing delays and lack of visibility into issue status.",
+    "solution": "Designed and developed a centralized helpdesk system with structured ticketing, status tracking, and reporting features.",
+    "outcome": "Improved response time, better issue tracking, and increased transparency across support operations.",
+    "tech": ["ASP.NET Web Forms", "C#", "SQL Server"],
+    "liveUrl": "",
+    "repoUrl": "",
+    "images": [
+      "https://placehold.co/800x500/533483/e0e0ff?text=Ticket+List",
+      "https://placehold.co/800x500/1a1a2e/e0e0ff?text=Ticket+Details"
+    ]
+  },
+  {
+    "id": "call-center-system",
+    "title": "Call Center Management System",
+    "tagline": "System maintenance and enhancement for daily operations",
+    "tags": ["Maintenance", "Debugging", "Production Support"],
+    "thumbnail": "https://placehold.co/600x400/16213e/e0e0ff?text=Call+Center",
+    "overview": "An enterprise call center system used daily for managing customer interactions and operational workflows.",
+    "problem": "System stability issues and production bugs affected daily operations and user productivity.",
+    "solution": "Maintained and enhanced the system by resolving production issues, optimizing performance, and ensuring system reliability.",
+    "outcome": "Improved system stability and ensured smooth daily operations for users relying on the platform.",
+    "tech": ["ASP.NET", "SQL Server", "Debugging", "Production Support"],
+    "liveUrl": "",
+    "repoUrl": "",
+    "images": [
+      "https://placehold.co/800x500/16213e/e0e0ff?text=Dashboard",
+      "https://placehold.co/800x500/0f3460/e0e0ff?text=Reports"
+    ]
+  }
+]
