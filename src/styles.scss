@@ -22,17 +22,24 @@
 
 // ── Dark theme ──────────────────────────────────────
 body.dark {
-  --bg:            #000000;
-  --surface:       #0a0a0a;
-  --surface-raised:#141414;
-  --border:        #1f1f1f;
-  --text:          #ffffff;
-  --text-muted:    #a0a0a0;
-  --accent:        #60a5fa;
-  --accent-muted:  #1e2e45;
-  --accent-secondary: #a78bfa;
+  --bg:            #0f0f23; /* Void Eclipse - deep dark blue */
+  --surface:       #1a1a3e; /* Darker void */
+  --surface-raised:#16213e; /* Abyss Blue */
+  --border:        #2e2e5e; /* Lighter border */
+  --text:          #e8e8f0; /* Silver Mist - light text */
+  --text-muted:    #a0a0b8; /* Muted silver mist */
+  --accent:        #60a5fa; /* Light blue accent */
+  --accent-muted:  #1e2e45; /* Dark accent background */
+  --accent-secondary: #a78bfa; /* Purple accent */
 
   color-scheme: dark;
+  
+  /* Gradient background from top to bottom */
+  background: linear-gradient(180deg, 
+    #0f0f23 0%,    /* Void Eclipse at top */
+    #16213e 50%,   /* Abyss Blue in middle */
+    #1a1a3e 100%   /* Darker void at bottom */
+  );
 }
 
 @layer base {
@@ -43,6 +50,20 @@ body.dark {
     color: var(--text);
     margin: 0;
     min-height: 100vh;
+  }
+  
+  body.dark {
+    background: linear-gradient(180deg, 
+      #0f0f23 0%,    /* Void Eclipse */
+      #0f0f23 20%,   /* Void Eclipse section */
+      #12182e 25%,   /* Start mix Void + Abyss */
+      #16213e 40%,   /* Abyss Blue section */
+      #16213e 45%,   /* Hold Abyss Blue */
+      #181855 50%,   /* Start mix Abyss + Silver */
+      #1a1a66 60%,   /* Continue mix */
+      #c0c8d0 75%,   /* Silver Mist section */
+      #e8e8f0 100%   /* Silver Mist at bottom */
+    );
   }
 }
 
