@@ -16,4 +16,14 @@ export class NavbarComponent {
     { label: 'About',    path: '/about'     },
     { label: 'Contact',  path: '/contact'   }
   ];
+
+  isMobileMenuOpen = false;
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+  }
 }
