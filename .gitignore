@@ -25,3 +25,6 @@ Thumbs.db
 coverage/
 *.tsbuildinfo
 .angular
+
+# Docs
+docs/
