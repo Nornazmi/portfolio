@@ -41,6 +41,19 @@ import { FormsModule } from '@angular/forms';
               <p class="text-zinc-700 dark:text-zinc-300">github.com/Nornazmi</p>
             </div>
           </div>
+
+          <!-- Download Resume -->
+          <a href="assets/Resume/Mohamad_Nornazmi_Resume.pdf" download
+             class="mt-6 flex items-center justify-center gap-2 px-6 py-4 rounded-xl 
+                    bg-gradient-to-r from-blue-600 to-blue-700 
+                    text-white font-semibold text-sm
+                    hover:from-blue-700 hover:to-blue-800 
+                    active:scale-95 transition-all shadow-lg shadow-blue-200 dark:shadow-blue-900/30">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download Resume
+          </a>
         </div>
         
         <!-- Contact Form -->
@@ -101,7 +114,9 @@ export class ContactComponent {
   };
 
   onSubmit() {
-    console.log('Form submitted:', this.contactForm);
-    // Handle form submission here
+    const subject = `Portfolio Contact Form - Message from ${this.contactForm.name}`;
+    const body = `Name: ${this.contactForm.name}\nEmail: ${this.contactForm.email}\n\nMessage:\n${this.contactForm.message}`;
+    const mailtoLink = `mailto:nornazmi00@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
   }
 }
