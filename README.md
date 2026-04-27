@@ -33,22 +33,6 @@ I'm a passionate developer who loves building clean, efficient, and user-friendl
 - Smooth routing between sections
 - Clean and modern UI
 
-## Run Locally
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm start
-
-# Build for production
-npm run build
-
-# Deploy to GitHub Pages
-npm run deploy
-```
-
 ---
 
 *Built with passion and clean code principles.*
