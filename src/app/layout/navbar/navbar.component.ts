@@ -13,8 +13,7 @@ export class NavbarComponent {
   navLinks = [
     { label: 'Home',     path: '/'         },
     { label: 'Projects', path: '/projects'  },
-    { label: 'About',    path: '/about'     },
-    { label: 'Contact',  path: '/contact'   }
+    { label: 'About',    path: '/about'     }
   ];
 
   isMobileMenuOpen = false;

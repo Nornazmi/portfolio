@@ -1,5 +1,5 @@
 <nav class="sticky top-0 z-50 border-b border-zinc-200 dark:border-zinc-800
-            bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md">
+            bg-zinc-50/80 dark:bg-zinc-950/80 backdrop-blur-md">
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center gap-8">
 
     <!-- Brand -->
@@ -13,7 +13,9 @@
     <ul class="hidden sm:flex items-center gap-1 list-none m-0 p-0">
       <li *ngFor="let link of navLinks">
         <a [routerLink]="link.path"
-           routerLinkActive="text-accent font-medium"
+           routerLinkActive="bg-indigo-50 dark:bg-indigo-950/60 text-accent font-semibold"
+           #desktopLink="routerLinkActive"
+           [attr.aria-current]="desktopLink.isActive ? 'page' : null"
            [routerLinkActiveOptions]="{ exact: link.path === '/' }"
            class="px-3 py-2 rounded-lg text-sm text-zinc-500 dark:text-zinc-400
                   hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900
@@ -48,13 +50,15 @@
 
   <!-- Mobile menu -->
   <div *ngIf="isMobileMenuOpen" 
-       class="sm:hidden border-t border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md">
+       class="sm:hidden border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/95 dark:bg-zinc-950/95 backdrop-blur-md">
     <div class="max-w-6xl mx-auto px-6 py-4">
       <ul class="flex flex-col gap-1 list-none m-0 p-0">
         <li *ngFor="let link of navLinks">
           <a [routerLink]="link.path"
              (click)="closeMobileMenu()"
-             routerLinkActive="text-accent font-medium"
+             routerLinkActive="bg-indigo-50 dark:bg-indigo-950/60 text-accent font-semibold"
+             #mobileLink="routerLinkActive"
+             [attr.aria-current]="mobileLink.isActive ? 'page' : null"
              [routerLinkActiveOptions]="{ exact: link.path === '/' }"
              class="block px-3 py-2 rounded-lg text-sm text-zinc-500 dark:text-zinc-400
                     hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:text-zinc-900
