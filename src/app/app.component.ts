@@ -1,11 +1,11 @@
 import {
-  Component, inject, signal,
-  ChangeDetectionStrategy, ChangeDetectorRef
+  Component,
+  inject,
+  signal,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
 } from '@angular/core';
-import {
-  RouterOutlet, RouterLink,
-  ActivatedRoute, NavigationEnd, Router
-} from '@angular/router';
+import { RouterOutlet, RouterLink, ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { filter, map } from 'rxjs/operators';
 import { NavbarComponent } from './layout/navbar/navbar.component';
@@ -16,21 +16,9 @@ import { slideUpFade } from './core/animations/route-animations';
   selector: 'app-root',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, CommonModule, NavbarComponent],
+  imports: [CommonModule, NavbarComponent, RouterOutlet],
   animations: [slideUpFade],
-  template: `
-    <app-navbar />
-
-    <!-- Wrapper must be position:relative for :leave absolute positioning -->
-    <div class="relative overflow-hidden">
-      <main class="main-content"
-            [@routeAnimations]="getRouteAnimationData(outlet)"
-            (@routeAnimations.start)="onAnimStart()"
-            (@routeAnimations.done)="onAnimDone()">
-        <router-outlet #outlet="outlet" />
-      </main>
-    </div>
-  `
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   private theme = inject(ThemeService);

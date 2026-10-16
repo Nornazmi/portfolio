@@ -1,0 +1,12 @@
+.card {
+  padding: 24px;
+  border-radius: 12px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ddd;
+}
+
+.dark-mode {
+  background-color: #222;
+  color: white;
+}

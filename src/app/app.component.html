@@ -1,6 +1,13 @@
-<div [class.dark]="isDarkMode()">
-  <app-navbar [isDark]="isDarkMode()" (toggleTheme)="toggleTheme()" />
-  <main class="main-content">
-    <router-outlet />
+<app-navbar />
+
+<!-- Wrapper must be position:relative for :leave absolute positioning -->
+<div class="relative overflow-hidden">
+  <main
+    class="main-content"
+    [@routeAnimations]="getRouteAnimationData(outlet)"
+    (@routeAnimations.start)="onAnimStart()"
+    (@routeAnimations.done)="onAnimDone()"
+  >
+    <router-outlet #outlet="outlet" />
   </main>
 </div>

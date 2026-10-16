@@ -1,0 +1,44 @@
+<p>training-page works!</p>
+
+<!-- Counter -->
+<h2>{{ count }}</h2>
+
+<button (click)="increase()">Increase</button>
+<button (click)="decrease()">Decrease</button>
+<button (click)="reset()">Reset</button>
+
+<!-- Live Text Preview -->
+<h2>Live Text Preview</h2>
+<input type="text" [(ngModel)]="liveText" placeholder="Type something..." />
+<p>{{ liveText }}</p>
+
+<!-- Show / Hide Content -->
+<h2>Show / Hide Content</h2>
+<button (click)="toggleVisibility()">{{ invisible ? 'Show' : 'Hide' }}</button>
+@if (invisible) {
+  <p>This content is hidden!</p>
+} @else {
+  <p>Content is visible!</p>
+}
+
+<!-- Colour / Theme Switcher -->
+<div class="card" [class.dark-mode]="isDarkMode">
+  <h3>Colour / Theme Switcher</h3>
+  <p>This card supports light and dark themes.</p>
+
+  <button (click)="toggleDarkMode()">
+    {{ isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode' }}
+  </button>
+</div>
+
+<!-- Dynamic Item List -->
+<input type="text" [(ngModel)]="newName" placeholder="Enter a name" />
+<button (click)="addName()">Add Name</button>
+<ul>
+  @for (name of names; track name) {
+    <li>
+      {{ name }}
+      <button (click)="removeName(names.indexOf(name))">Remove</button>
+    </li>
+  }
+</ul>
