@@ -1,44 +1,123 @@
-<p>training-page works!</p>
+<main class="training-page">
+  <header class="page-header">
+    <p class="eyebrow">Angular practice lab</p>
+    <h1>Interactive training exercises</h1>
+    <p>
+      Try each example to see Angular event binding, two-way binding, conditional rendering, class
+      binding, and list rendering in action.
+    </p>
+  </header>
 
-<!-- Counter -->
-<h2>{{ count }}</h2>
+  <section class="exercise-grid" aria-label="Training exercises">
+    <!-- Counter -->
+    <article class="exercise-card">
+      <div class="exercise-heading">
+        <span class="exercise-number">01</span>
+        <div>
+          <p class="exercise-type">Event binding</p>
+          <h2>Counter</h2>
+        </div>
+      </div>
+      <p class="exercise-description">Use the buttons to update a component value.</p>
+      <output class="counter-value" aria-live="polite">{{ count }}</output>
+      <div class="button-row">
+        <button type="button" class="button button-secondary" (click)="decrease()">Decrease</button>
+        <button type="button" class="button button-primary" (click)="increase()">Increase</button>
+        <button type="button" class="button button-quiet" (click)="reset()">Reset</button>
+      </div>
+    </article>
 
-<button (click)="increase()">Increase</button>
-<button (click)="decrease()">Decrease</button>
-<button (click)="reset()">Reset</button>
+    <!-- Live Text Preview -->
+    <article class="exercise-card">
+      <div class="exercise-heading">
+        <span class="exercise-number">02</span>
+        <div>
+          <p class="exercise-type">Two-way binding</p>
+          <h2>Live Text Preview</h2>
+        </div>
+      </div>
+      <p class="exercise-description">Type below to update the preview instantly.</p>
+      <label class="field-label" for="live-text">Your text</label>
+      <input id="live-text" type="text" [(ngModel)]="liveText" placeholder="Type something..." />
+      <p class="preview-box" aria-live="polite">
+        {{ liveText || 'Your preview will appear here.' }}
+      </p>
+    </article>
 
-<!-- Live Text Preview -->
-<h2>Live Text Preview</h2>
-<input type="text" [(ngModel)]="liveText" placeholder="Type something..." />
-<p>{{ liveText }}</p>
+    <!-- Show / Hide Content -->
+    <article class="exercise-card">
+      <div class="exercise-heading">
+        <span class="exercise-number">03</span>
+        <div>
+          <p class="exercise-type">Conditional rendering</p>
+          <h2>Show / Hide Content</h2>
+        </div>
+      </div>
+      <p class="exercise-description">Toggle conditional content on and off.</p>
+      <button type="button" class="button button-primary" (click)="toggleVisibility()">
+        {{ invisible ? 'Show content' : 'Hide content' }}
+      </button>
+      @if (invisible) {
+        <p class="status-message status-hidden">Content is hidden.</p>
+      } @else {
+        <p class="status-message status-visible">Content is visible.</p>
+      }
+    </article>
 
-<!-- Show / Hide Content -->
-<h2>Show / Hide Content</h2>
-<button (click)="toggleVisibility()">{{ invisible ? 'Show' : 'Hide' }}</button>
-@if (invisible) {
-  <p>This content is hidden!</p>
-} @else {
-  <p>Content is visible!</p>
-}
+    <!-- Colour / Theme Switcher -->
+    <article class="exercise-card theme-exercise" [class.dark-mode]="isDarkMode">
+      <div class="exercise-heading">
+        <span class="exercise-number">04</span>
+        <div>
+          <p class="exercise-type">Class binding</p>
+          <h2>Colour / Theme Switcher</h2>
+        </div>
+      </div>
+      <p class="exercise-description">Toggle a CSS class to switch this card’s colour theme.</p>
+      <div class="theme-preview">
+        <span class="theme-dot"></span
+        ><span>{{ isDarkMode ? 'Dark theme active' : 'Light theme active' }}</span>
+      </div>
+      <button type="button" class="button button-primary" (click)="toggleDarkMode()">
+        {{ isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode' }}
+      </button>
+    </article>
 
-<!-- Colour / Theme Switcher -->
-<div class="card" [class.dark-mode]="isDarkMode">
-  <h3>Colour / Theme Switcher</h3>
-  <p>This card supports light and dark themes.</p>
-
-  <button (click)="toggleDarkMode()">
-    {{ isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode' }}
-  </button>
-</div>
-
-<!-- Dynamic Item List -->
-<input type="text" [(ngModel)]="newName" placeholder="Enter a name" />
-<button (click)="addName()">Add Name</button>
-<ul>
-  @for (name of names; track name) {
-    <li>
-      {{ name }}
-      <button (click)="removeName(names.indexOf(name))">Remove</button>
-    </li>
-  }
-</ul>
+    <!-- Dynamic Item List -->
+    <article class="exercise-card list-exercise">
+      <div class="exercise-heading">
+        <span class="exercise-number">05</span>
+        <div>
+          <p class="exercise-type">List rendering</p>
+          <h2>Dynamic Item List</h2>
+        </div>
+      </div>
+      <p class="exercise-description">Add a name to the list, then remove it when you are done.</p>
+      <div class="add-name-row">
+        <label class="sr-only" for="new-name">Name</label>
+        <input
+          id="new-name"
+          type="text"
+          [(ngModel)]="newName"
+          placeholder="Enter a name"
+          (keyup.enter)="addName()"
+        />
+        <button type="button" class="button button-primary" (click)="addName()">Add name</button>
+      </div>
+      @if (names.length === 0) {
+        <p class="empty-state">No names added yet.</p>
+      } @else {
+        <ul class="name-list">
+          @for (name of names; track name; let index = $index) {
+            <li>
+              <span>{{ name }}</span
+              ><button type="button" class="remove-button" (click)="removeName(index)">
+                Remove
+              </button>
+            </li>
+          }
+        </ul>
+      }
+    </article>
+  </section>
+</main>
